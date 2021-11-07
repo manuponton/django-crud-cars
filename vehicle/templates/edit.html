@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{ vehicle.id}}">
+    {% csrf_token %}
+    <div class="container">
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <h3>Update Details</h3>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Vehicle Id:</label>
+            <div class="col-sm-4">
+                <input type="text" name="eid" id="id_eid" required maxlength="20" value="{{ vehicle.eid }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Vehicle Type:</label>
+            <div class="col-sm-4">
+                <input type="text" name="etypeVehicle" id="id_etypeVehicle" required maxlength="100" value="{{ vehicle.etypeVehicle }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Vehicle Model:</label>
+            <div class="col-sm-4">
+                <input type="email" name="emodel" id="id_emodel" required maxlength="254"
+                       value="{{ vehicle.emodel }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Vehicle Brand:</label>
+            <div class="col-sm-4">
+                <input type="text" name="ebrand" id="id_ebrand" required maxlength="100"
+                       value="{{ vehicle.ebrand }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Vehicle Plate:</label>
+            <div class="col-sm-4">
+                <input type="text" name="eplate" id="id_eplate" required maxlength="100"
+                       value="{{ vehicle.eplate }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Vehicle Mileage:</label>
+            <div class="col-sm-4">
+                <input type="text" name="emileage" id="id_emileage" required maxlength="100"
+                       value="{{ vehicle.emileage }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
